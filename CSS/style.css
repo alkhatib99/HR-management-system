@@ -1,0 +1,325 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+height: auto;
+
+}
+
+body{
+    text-align: center;
+}
+/* The Header */
+header
+{
+    grid-row: 1/3;
+
+    background-color: #9CB9B0;
+    height: 100px;
+    grid-column: 1/5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: fixed;
+
+    top: 0px;
+    border: 1px;
+    border-style:solid;
+
+}
+header .header-logo-div
+{
+    left: 100px;
+    top: 0;
+    width: 100px;
+    height: 100%;
+}
+header .header-logo-div img
+{background-color: #9CB9B0;
+    width: 100%;
+    height: 100%;
+}
+header .header-logo-div .header-logo 
+{
+ left: auto; 
+}
+.header-logo{
+    width: 200px;
+    height: 100px;
+}
+
+header .header-name
+{
+ font-family: 'Bangers';
+ font-size: 64px;
+ font-weight: bold;   
+top: 0%;
+}
+header .header-name .header-name-white-letter
+{
+color: white;
+}
+header  .header-nav-div
+{
+
+right: 100px;
+padding:20px !important;
+}
+header  .header-nav-items 
+{
+right: 100px;
+padding: 10px !important;
+    
+
+}
+header .header-nav-div .header-nav a.header-nav-items 
+{
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-weight: bold;
+color: black;
+
+}
+header .header-nav-div .header-nav  a:visited
+{
+color:rgb(28, 15, 218);
+
+}
+
+header .header-nav-div .header-nav a:hover 
+{
+color: blueviolet;
+}
+
+/*The main style */
+
+
+main{
+z-index: -1;
+    grid-column: 2/4;
+    grid-row: 2/3;
+top: auto;
+margin-top: 10%;
+padding: 10px;
+margin-left: 10%;
+margin-right: 10%;
+display: block;
+position: relative;
+}
+    
+    
+main .note-section
+{
+    display: inline;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 29px;
+ margin-bottom: 30px;   
+}
+main section h6
+{
+    text-align: center;
+    text-shadow: #9CB9B0;
+    text-anchor: end;
+}
+    
+  main  table{
+
+    padding: 10px;
+        border-style: solid;
+        width: 100%;
+        height: 80%;
+    
+    }
+    main table tbody tr  td {
+        padding: 5px;
+    }
+main table tbody tr  td.table-date-col input {
+width: 100%; 
+
+
+
+}
+/*  The Footer CSS*/
+main section.about-section{
+
+    margin-top: 10px;
+    margin-bottom:10px;
+
+}
+main .about-section .about-div
+{
+
+    text-align: center;
+}
+main .about-section .about-div p 
+{
+    font-family: Bangers;
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+
+}
+
+main .about-section .about-div p .letter-a-in-about
+{
+color:#376451;
+}
+
+main section.info-section
+{display: inline-block;
+    position: relative;
+    border: #376451;
+    border-style:ridge;
+    background-attachment:fixed;
+    background-color: #DEE1E0;
+    box-shadow:1px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+main .info-section div.personal-pic {
+    display:inline-block;
+margin-bottom: 0%;
+margin-left: 4px;
+height: 100px;    
+box-sizing: content-box;
+top: 0;
+width: 110px;
+}
+main .info-section div.personal-pic img {
+ 
+    width: 100px;
+    height: 100px;
+}
+main .info-section div.details-div {
+display: inline-block;
+margin-top: 10px;
+margin-left: 150px;
+position: relative;
+margin-right: 0%;
+}
+
+main section.form-section
+{
+display:block;
+position: relative;
+    margin-top: 10px;
+    margin-bottom: 15px;
+ 
+    border: #376451;
+    border-style:ridge;
+    background-attachment:fixed;
+    background-color: #DEE1E0;
+    margin-left: 5%;
+    margin-right: 5%;  
+}
+main section.form-section .form-label
+{
+    text-align: center;
+font-size: 15px;
+font-weight: bold;
+text-decoration: underline;
+}
+
+main section.form-section div.left-form-side
+{
+    display: inline-block;
+padding: 20px;
+}
+main section.form-section div.left-form-side input
+{
+    margin: 10px;
+} 
+main section.form-section div.right-form-side
+{
+    display: inline-block;
+
+}
+main section.form-section div.right-form-side textarea
+{
+    width: 300px;
+
+}
+main section.form-section div.buttons
+{
+    margin-right: 4%;
+padding: 10px,20px;
+    display: block;
+    align-items: center;
+    margin-left: 40%;
+}
+main section.form-section div.buttons input
+
+{
+    width: 70px;
+}
+
+
+
+footer{
+display: flex;
+
+    background-color: #9CB9B0;
+    grid-row: 4/5;
+    height: 100px;
+    grid-column: 1/5;
+        align-items: center;
+        border: 1px;
+        border-style:solid;
+        width: 100%;
+        bottom: 0;
+        justify-content: space-between;
+position:fixed;
+
+align-items: center;
+margin-bottom: 0;
+}
+
+    footer .footer-logo-div{
+
+        left: 100px;
+        top: 0;
+        height: 100%;    
+        left: 100px;
+        top: 0;
+        width: 100px;
+        height: 95%;
+     margin-right: 100px;
+
+    }
+    footer .footer-logo-div img{
+    background-color: #9CB9B0;
+    width: 100%;
+    height: 100%;
+    }
+
+
+        footer .footer-nav-div {
+            right: 5%;
+        margin-right: 3%;
+        }
+        footer .footer-nav-div .footer-nav
+        {
+width: auto;
+height: auto;
+right: 5%;
+margin-left: 90px;
+       }
+    footer .footer-nav-div .footer-nav  a  img{
+width: 20px;
+height: 20px;
+    }
+
+
+@media (max-width:700px) {
+    .footer{
+        text-align: center;
+    }
+    
+}
+
