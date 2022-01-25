@@ -9,23 +9,23 @@ height: auto;
 }
 
 body{
+    background-color: #EEEEEE;
+    display: fixed;
+    position: relative;
     text-align: center;
+    margin-bottom: 8%;
 }
 /* The Header */
 header
 {
-    grid-row: 1/3;
-
-    background-color: #9CB9B0;
-    height: 100px;
-    grid-column: 1/5;
+position: relative;
+background-color: #4FBDBA;
+height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
-
     justify-content: space-between;
-
-    position: fixed;
+margin-bottom: 2%;
 
     top: 0px;
     border: 1px;
@@ -40,7 +40,8 @@ header .header-logo-div
     height: 100%;
 }
 header .header-logo-div img
-{background-color: #9CB9B0;
+{
+    background-color: #4FBDBA;
     width: 100%;
     height: 100%;
 }
@@ -97,176 +98,64 @@ header .header-nav-div .header-nav a:hover
 color: blueviolet;
 }
 
+fieldset
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    width:auto;
+    align-items: center;
+    align-self: center;
+    padding: 5%;
+}
 /*The main style */
 
+section#section-emp  div {
+    padding: 15px;
+    text-emphasis-color: white;
 
-main{
-z-index: -1;
-    grid-column: 2/4;
-    grid-row: 2/3;
-top: auto;
-margin-top: 10%;
-padding: 10px;
-margin-left: 10%;
-margin-right: 10%;
-display: block;
-position: relative;
+    margin-top: 20px;
+    margin-left: 25%;    
+    padding: auto;
+    align-self: center;
+    align-content: center;
+    background-color:#35858B;
+    width: 450px;
+    height: 350px;
 }
-    
-    
-main .note-section
-{
-    display: inline;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-size: 29px;
- margin-bottom: 30px;   
-}
-main section h6
-{
-    text-align: center;
-    text-shadow: #9CB9B0;
-    text-anchor: end;
-}
-    
-  main  table{
+section#section-emp  div p {
 
-    padding: 10px;
-        border-style: solid;
-        width: 100%;
-        height: 80%;
-    
-    }
-    main table tbody tr  td {
-        padding: 5px;
-    }
-main table tbody tr  td.table-date-col input {
-width: 100%; 
-
-
-
-}
-/*  The Footer CSS*/
-main section.about-section{
-
-    margin-top: 10px;
-    margin-bottom:10px;
-
-}
-main .about-section .about-div
-{
-
-    text-align: center;
-}
-main .about-section .about-div p 
-{
-    font-family: Bangers;
-    font-size: 26px;
-    color: black;
-    font-weight: bold;
+    color: white;
+    width: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
-main .about-section .about-div p .letter-a-in-about
-{
-color:#376451;
-}
-
-main section.info-section
-{display: inline-block;
-    position: relative;
-    border: #376451;
-    border-style:ridge;
-    background-attachment:fixed;
-    background-color: #DEE1E0;
-    box-shadow:1px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-main .info-section div.personal-pic {
-    display:inline-block;
-margin-bottom: 0%;
-margin-left: 4px;
-height: 100px;    
-box-sizing: content-box;
-top: 0;
-width: 110px;
-}
-main .info-section div.personal-pic img {
- 
-    width: 100px;
-    height: 100px;
-}
-main .info-section div.details-div {
-display: inline-block;
-margin-top: 10px;
-margin-left: 150px;
-position: relative;
-margin-right: 0%;
-}
-
-main section.form-section
-{
-display:block;
-position: relative;
-    margin-top: 10px;
-    margin-bottom: 15px;
- 
-    border: #376451;
-    border-style:ridge;
-    background-attachment:fixed;
-    background-color: #DEE1E0;
-    margin-left: 5%;
-    margin-right: 5%;  
-}
-main section.form-section .form-label
-{
-    text-align: center;
-font-size: 15px;
-font-weight: bold;
-text-decoration: underline;
-}
-
-main section.form-section div.left-form-side
-{
-    display: inline-block;
-padding: 20px;
-}
-main section.form-section div.left-form-side input
-{
-    margin: 10px;
-} 
-main section.form-section div.right-form-side
-{
-    display: inline-block;
+section#section-emp  div img {
+    background-color:#35858B;
+background-attachment:fixed;
+    width: 200px;
+    height: 200px;
 
 }
-main section.form-section div.right-form-side textarea
-{
-    width: 300px;
-
-}
-main section.form-section div.buttons
-{
-    margin-right: 4%;
-padding: 10px,20px;
-    display: block;
-    align-items: center;
-    margin-left: 40%;
-}
-main section.form-section div.buttons input
-
-{
-    width: 70px;
+section#section-emp  div img:hover {
+    background-attachment: scroll;
+transform: scale(1.5);
 }
 
 
+
+
+
+
+
+
+/* The footer style */
 
 footer{
 display: flex;
 
-    background-color: #9CB9B0;
-    grid-row: 4/5;
-    height: 100px;
+background-color: #4FBDBA;
+height: 100px;
     grid-column: 1/5;
         align-items: center;
         border: 1px;
@@ -293,8 +182,8 @@ margin-bottom: 0;
 
     }
     footer .footer-logo-div img{
-    background-color: #9CB9B0;
-    width: 100%;
+        background-color: #4FBDBA;
+        width: 100%;
     height: 100%;
     }
 
