@@ -8,7 +8,6 @@
   <title>Home</title>
   <link rel="stylesheet" href="CSS/style.css">
   <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
-<script src="/Scripts/app.js"></script>
 </head>
 
 <body>
@@ -20,21 +19,21 @@
 
     <div class="theName">
       <h3 class="header-name">
-        <span class="header-name-white-letter">H</span>R 
+        <span class="header-name-white-letter">H</span>R
       </h3>
     </div>
 
     <div class="header-nav-div">
       <nav class="header-nav">
-        
+
         <a class="header-nav-items" href="index.html">
-       
+
           Home
-          
-          </a>
+
+        </a>
 
         <a class="header-nav-items" href="accounting.html">
-           Acountant
+          Acountant
         </a>
 
 
@@ -42,12 +41,67 @@
     </div>
 
   </header>
-  <main>
+   
+  <section>
+    
+    <h2>Add a Employee: </h2>
+    <form id="empForm">
+      <fieldset>
+        <legend>add new emplyee</legend>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Full Name" />
+        <br>
+        <br>
+        <label for="department">Department:</label>
 
- 
-  </main>
+        <select name="department" id="department" >
+          <option value="Administration" >Administration</option>
+          <option value="Marketing" >Marketing</option>
+          <option value="Development">Development</option>
+          <option value="Finance">Finance</option>
+        </select>
+      
+        <br>
+        <br>
+        <label for="Level">Level:</label>
+
+        <select name="Level" id="Level">
+          <option value="Junior">Junior</option>
+          <option value="Mid-Senior">Mid-Senior</option>
+          <option value="Senior">Senior</option>
+        </select>
+        <br>
+        <br>
+        <label for="Image">Image Choose:</label>
+        <select name="Image" id="Image">
+          <option value="Rana">Rana</option>
+          <option value="Omar">Omar</option>
+          <option value="Tamara">Tamara</option>
+          <option value="Lana">Lana</option>
+          <option value="Safi">Safi</option>
+          <option value="Hadi">Hadi</option>
+          <option value="Ghazi">Ghazi</option>
+        </select>
+
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="add new Emplyee">
 
 
+      </fieldset>
+    </form>
+    
+  </section>
+  <fieldset style="margin-top: 2%;">
+    <legend style="font-size: 25px;;">The Employees</legend>
+
+
+  <section id="section-emp">
+
+   </section>
+
+   </fieldset>
   <footer>
     <div class="footer-logo-div">
       <img class="footer-logo" src="CSS/images/logo.png" alt="Logo">
@@ -74,6 +128,9 @@
       </nav>
     </div>
   </footer>
+
+  <script src="/Scripts/app.js"></script>
+
 </body>
 
 </html>

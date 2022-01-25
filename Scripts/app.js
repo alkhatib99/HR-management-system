@@ -1,16 +1,34 @@
 'use strict';
 
 
-function Employee(employeeId, fullName, department, level,)
+function Employee( fullName, department, level,imageName)
 {
-    this.employeeId=employeeId;
+    this.employeeId=generateId();
     this.fullName=fullName;
     this.department=department;
     this.level=level;
-    this.imageUrl="CSS/images/person.png";
+    this.imageUrl=`CSS/images/${imageName}.jpg`;
     this.salary=this.calculateSalary();
 }
+const arr=[];
 
+function generateId(){
+let num="";
+    for(var i = 0 ; i < 4 ; i++)
+{
+        let n = Math.floor(Math.random()*10);
+num+=n.toString();
+}
+
+if(!arr.includes(num))
+{ 
+arr.push(num);
+return num;
+}
+else{
+    return generateId();
+}
+}
 function generateRandom(min,max){
 
     max=Math.floor(max);
@@ -35,22 +53,38 @@ return netSal;
 
 //calculateSalary();
 Employee.prototype.render = function(){
- document.write(`<div><img src="`+this.imageUrl+`" width="128px" height="128px" />  <br><p>The Employee: `+ this.fullName +` <br>Who has level:`+ this.level +` <br>Worked in: `+this.department +`<br>Salary is: `+this.salary+`$</p></div>`);
+    let main = document.getElementById('section-emp');
+    let div  = document.createElement('div');
+div.setAttribute('id',"card-div");
+    main.appendChild(div);
+let img = document.createElement('img');
+div.appendChild(img);
+img.setAttribute('alt','The Emp Photo');
+img.setAttribute('src',this.imageUrl);
+let p=document.createElement('p');
+div.appendChild(p);
+p.innerHTML=`Name: ${this.fullName} - ID: ${this.employeeId} <br> 
+Department: ${this.department} - Level: ${this.level}<br> ${this.salary}`;
+
+
+
+
+  //  document.write(`<div><img src="`+this.imageUrl+`" width="128px" height="128px" />  <br><p>The Employee: `+ this.fullName +` <br>Who has level:`+ this.level +` <br>Worked in: `+this.department +`<br>Salary is: `+this.salary+`$</p></div>`);
  //console.log(this.fullName)
 }
 
-let emp1 = new Employee(1000,"Ggazzi Samer", "Adminstration","Senior");
-emp1.render();
-let emp2 = new Employee(1001,"Lana Ali", "Finance","Senior");
-emp2.render();
-let emp3 = new Employee(1002,"Tamara Ayoub", "Marketing","Senior");
-emp3.render();
-let emp4 = new Employee(1003,"Safi Waleed", "Adminstration","Mid-Senior");
-emp4.render();
-let emp5 = new Employee(1004,"Omar Zaid", "Development","Senior");
-emp5.render()
-let emp6 = new Employee(1005,"Rana Saleh", "Development","Mid-Senior");
-emp6.render();
-let emp7 = new Employee(1006,"Hadi Ahmed", "Finance","Junior");
-emp7.render();
+let empForm = document.getElementById('empForm');
+empForm.addEventListener("submit", addNewEmployee);
+
+function addNewEmployee(event){
+  event.preventDefault();
+  let name = event.target.name.value;
+  let dept=event.target.department.value;
+  let level=event.target.Level.value;
+  let imgurl = event.target.Image.value;
+  let newEmp = new Employee(name,dept,level,imgurl);
+  newEmp.render();
+  console.log(newEmp);
+}
+
 
