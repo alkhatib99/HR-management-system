@@ -71,8 +71,13 @@ Employee.prototype.render = function(){
 
 
 //////// The Functions //////////
-
+/**
+ * 
+ * 
+ */
 let arr = []
+
+
 function generateId(){
 var num="";
     for(var i = 0 ; i < 4 ; i++)
