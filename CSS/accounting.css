@@ -1,0 +1,16 @@
+section.table-section{
+    text-align: center;
+    align-items: center;
+    padding: 3%;
+display:flex;
+margin: auto;
+
+}
+section.table-section table{
+border:  1px;
+border-style: solid;
+display: table;
+border-color: whitesmoke;
+color: whitesmoke;
+background-color: black;
+}
