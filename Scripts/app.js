@@ -140,6 +140,7 @@ const emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior","./CS
 const emp5 = new Employee("1004","Omar Zaid","Development","Senior","./CSS/images/Omar.jpg");
 const emp6 = new Employee("1005","Rana Saleh","Development","Junior","./CSS/images/Rana.jpg");
 const emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior","./CSS/images/Hadi.jpg");
+settingItem();
 
 console.log( Employee.allEmployee);
 
