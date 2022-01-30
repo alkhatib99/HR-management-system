@@ -129,18 +129,17 @@ function addNewEmployee(event){
    
     let newEmp = new Employee(generateId(),name,dept,level,imgurl);
     
-   render();
-   settingItem()
+   settingItem();
 };
 
 
-let emp1 = new Employee("1000","Ghazi Samer","Adminstration","Senior","./CSS/images/Ghazi.jpg");
-let emp2 = new Employee("1001","Lana Ali","Finance","Senior","./CSS/images/Lana.jpg");
-let emp3 = new Employee("1002","Tamara Ayoub","Marketing","Senior","./CSS/images/Tamara.jpg");
-let emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior","./CSS/images/Safi.jpg");
-let emp5 = new Employee("1004","Omar Zaid","Development","Senior","./CSS/images/Omar.jpg");
-let emp6 = new Employee("1005","Rana Saleh","Development","Junior","./CSS/images/Rana.jpg");
-let emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior","./CSS/images/Hadi.jpg");
+const emp1 = new Employee("1000","Ghazi Samer","Adminstration","Senior","./CSS/images/Ghazi.jpg");
+const emp2 = new Employee("1001","Lana Ali","Finance","Senior","./CSS/images/Lana.jpg");
+const emp3 = new Employee("1002","Tamara Ayoub","Marketing","Senior","./CSS/images/Tamara.jpg");
+const emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior","./CSS/images/Safi.jpg");
+const emp5 = new Employee("1004","Omar Zaid","Development","Senior","./CSS/images/Omar.jpg");
+const emp6 = new Employee("1005","Rana Saleh","Development","Junior","./CSS/images/Rana.jpg");
+const emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior","./CSS/images/Hadi.jpg");
 
 console.log( Employee.allEmployee);
 
@@ -164,11 +163,12 @@ function settingItem(){
       Employee.allEmployee = parsObj
     }
   
-    render();
   
   }
 
  
 
-  gettingItem()
+  gettingItem();
+  render();
+
  console.log(Employee.allEmployee);
