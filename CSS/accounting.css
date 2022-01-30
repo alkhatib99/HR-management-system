@@ -2,11 +2,15 @@ section.table-section{
     text-align: center;
     align-items: center;
     padding: 3%;
-display:flex;
+display:block;
+align-self: center;
 margin: auto;
-
-}
+width: 70%;
+height: auto;}
 section.table-section table{
+    width: 100%;
+    height: auto;
+    block-size: auto;
 border:  1px;
 border-style: solid;
 display: table;
