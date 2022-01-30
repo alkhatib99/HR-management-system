@@ -12,16 +12,19 @@ const empObjStat=[]
 
 ///// The Employee's function and function prototype //////
 
-function Employee( employeeId,fullName, department, level)
+function Employee( employeeId,fullName, department, level,imageUrl)
 {
     this.employeeId=employeeId;
     this.fullName=fullName;
     this.department=department;
     this.level=level;
     this.imageName;
-    this.imageUrl="";
+    this.imageUrl=imageUrl;
     this.salary=this.calculateSalary();
+    Employee.allEmployee.push(this);
+
 };
+Employee.allEmployee=[];
 
 Employee.prototype.calculateSalary= function(){
     let sal;
@@ -40,34 +43,36 @@ return netSal;
 
 
 //calculateSalary();
-Employee.prototype.render = function(){
-    let main = document.getElementById('section-emp');
-    let div  = document.createElement('div');
-    div.setAttribute('id',"card-div");
-    main.appendChild(div);
-    let img = document.createElement('img');
-    div.appendChild(img);
-    img.setAttribute('alt','The Emp Photo');
-    if(!this.imageUrl.match(""))
-    img.setAttribute('src',this.imageUrl);
+ function render() {
 
-    else 
-    img.setAttribute('src',this.imageName);
+    let main = document.getElementById('section-emp');
     
+    for(var i =0 ; i< Employee.allEmployee.length;i++)
+    {
+   let data=Employee.allEmployee[i];
+   let div  = document.createElement('div');
+    div.setAttribute('class',"card-div");
+    let img = document.createElement('img');
+    img.setAttribute('alt','The Emp Photo');
+
+    img.setAttribute('src',`${data.imageUrl}`);
+    
+    div.appendChild(img);
+   
     let p=document.createElement('p');
     div.appendChild(p);
-    p.innerHTML=`Name: ${this.fullName} - ID: ${this.employeeId} <br> 
-    Department: ${this.department} - Level: ${this.level}<br> ${this.salary}`;
-    
-    empObjDyn.push(this);
-    
-    
-    
-      //  document.write(`<div><img src="`+this.imageUrl+`" width="128px" height="128px" />  <br><p>The Employee: `+ this.fullName +` <br>Who has level:`+ this.level +` <br>Worked in: `+this.department +`<br>Salary is: `+this.salary+`$</p></div>`);
+    p.innerHTML=`ID:  ${data.employeeId} <br>Name: ${data.fullName}  <br> 
+    Department:  ${data.department} <br> Level: ${data.level}<br>
+    Salary:  ${data.salary}`;
+main.appendChild(div);
+    }
+};
+
+
+     
+ //  document.write(`<div><img src="`+this.imageUrl+`" width="128px" height="128px" />  <br><p>The Employee: `+ this.fullName +` <br>Who has level:`+ this.level +` <br>Worked in: `+this.department +`<br>Salary is: `+this.salary+`$</p></div>`);
      //console.log(this.fullName)
     
-    };
-
 
 
 //////// The Functions //////////
@@ -79,7 +84,7 @@ let arr = []
 
 
 function generateId(){
-var num="";
+let num="";
     for(var i = 0 ; i < 4 ; i++)
 {
         let n = Math.floor(Math.random()*10);
@@ -121,31 +126,50 @@ function addNewEmployee(event){
     let dept=event.target.department.value;
     let level=event.target.Level.value;
     let imgurl = event.target.Image.value;
-    let newEmp = new Employee(name,dept,level,imgurl);
-    newEmp.render();
+   
+    let newEmp = new Employee(generateId(),name,dept,level,imgurl);
+    
+   settingItem();
 };
 
 
-let emp1 = new Employee("1000","Ghazi Samer","Adminstration","Senior");
-empObjStat.push(emp1);
-let emp2 = new Employee("1001","Lana Ali","Finance","Senior");
-empObjStat.push(emp2);
-let emp3 = new Employee("1002","Tamara Ayoub","Marketing","Senior");
-empObjStat.push(emp3);
-let emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior");
-empObjStat.push(emp4);
-let emp5 = new Employee("1004","Omar Zaid","Development","Senior");
-empObjStat.push(emp5);
-let emp6 = new Employee("1005","Rana Saleh","Development","Junior");
-empObjStat.push(emp6);
-let emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior");
-empObjStat.push(emp7);
+const emp1 = new Employee("1000","Ghazi Samer","Adminstration","Senior","./CSS/images/Ghazi.jpg");
+const emp2 = new Employee("1001","Lana Ali","Finance","Senior","./CSS/images/Lana.jpg");
+const emp3 = new Employee("1002","Tamara Ayoub","Marketing","Senior","./CSS/images/Tamara.jpg");
+const emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior","./CSS/images/Safi.jpg");
+const emp5 = new Employee("1004","Omar Zaid","Development","Senior","./CSS/images/Omar.jpg");
+const emp6 = new Employee("1005","Rana Saleh","Development","Junior","./CSS/images/Rana.jpg");
+const emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior","./CSS/images/Hadi.jpg");
+settingItem();
+
+console.log( Employee.allEmployee);
 
 
-for(var i = 0 ; i <empObjStat.length;i++)
-    {let firstName =empObjStat[i].fullName.substr(0,empObjStat[i].fullName.indexOf(' '));
-        //firstName=firstName.sub
-    empObjStat[i].imageName=`CSS/images/${firstName}.jpg`;
-    empObjStat[i].render();
-   }
+function settingItem(){
+    let data = JSON.stringify(Employee.allEmployee);// convert the data to JSON format 
+    localStorage.setItem('employees',data)
+  
+  
+  }
+  
+  
+  //2. get date : take the data from local storage 
+  
+  function gettingItem(){
+    let stringObj = localStorage.getItem('employees');
+     console.log(stringObj);
+    let parsObj = JSON.parse(stringObj);
+    console.log(parsObj);
+    if (parsObj !== null){
+      Employee.allEmployee = parsObj
+    }
+  
+  
+  }
 
+ 
+
+  gettingItem();
+  render();
+
+ console.log(Employee.allEmployee);
