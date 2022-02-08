@@ -17,8 +17,7 @@ let allEmployee=[];
 Department.allDepartment=[];
 function getTotalInfo()
 {
-    let arr={
-    }
+    let arr={}
     let count = 0 ; 
     let sum = 0 ;
     let avg=0;
@@ -34,7 +33,6 @@ arr.sum=sum;
 arr.avg=avg;
         return arr;
 }
-let departments=['Adminstration','Marketing','Development','Finance'];
 
 const dept1 = new Department('Adminstration'); 
 const dept2 = new Department('Marketing'); 
@@ -44,13 +42,12 @@ const dept4 = new Department('Finance');
 function gettingItem(){
     let empObj = localStorage.getItem('employees');
      let parsEmpObj = JSON.parse(empObj);
-    let depObj = localStorage.getItem('departments');
-let parsDepObj = JSON.parse(depObj);
+  
   //   console.log(parsObj);
     if (parsEmpObj !== null){
     allEmployee = parsEmpObj;
     }
-      
+     console.log(allEmployee); 
     
   }
   
@@ -63,19 +60,18 @@ for(var i = 0 ; i < Department.allDepartment.length;i++)
         allEmployee.forEach(element => {
        if(element['department'] == data.departmentName)
        {
-           console.log(element.department);
 count++;
 sum+=element.salary;
 
        } 
     });
     
-data.noOfEmp=count;
-data.totalSal=sum;
-data.avgSal=sum/count;
-console.log(data);
+Department.allDepartment[i].noOfEmp=count;
+Department.allDepartment[i].totalSal=sum;
+Department.allDepartment[i].avgSal=sum/count;
 
 }
+console.log(Department.allDepartment)
    };
 
    function render() {
@@ -146,8 +142,7 @@ tfooter.appendChild(trOfFoot);
 gettingItem();
 createDeptArray();
 render();
-console.log(allEmployee);
-console.log(Department.allDepartment);
+
 
 /*
 
