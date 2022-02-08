@@ -45,8 +45,7 @@ return netSal;
 //calculateSalary();
  function render() {
 
-    let main = document.getElementById('section-emp');
-    
+    let sec = document.getElementById('section-emp');
     for(var i =0 ; i< Employee.allEmployee.length;i++)
     {
    let data=Employee.allEmployee[i];
@@ -64,7 +63,7 @@ return netSal;
     p.innerHTML=`ID:  ${data.employeeId} <br>Name: ${data.fullName}  <br> 
     Department:  ${data.department} <br> Level: ${data.level}<br>
     Salary:  ${data.salary}`;
-main.appendChild(div);
+sec.appendChild(div);
     }
 };
 
@@ -118,17 +117,15 @@ function generateRandom(min,max){
 let empForm = document.getElementById('empForm');
 empForm.addEventListener("submit", addNewEmployee);
 
-
-
 function addNewEmployee(event){
-    event.preventDefault();
+   // event.preventDefault();
     let name = event.target.name.value;
     let dept=event.target.department.value;
     let level=event.target.Level.value;
     let imgurl = event.target.Image.value;
    
-    let newEmp = new Employee(generateId(),name,dept,level,imgurl);
-    
+    let n= new Employee(generateId(),name,dept,level,imgurl);
+    render();
    settingItem();
 };
 
@@ -140,36 +137,33 @@ const emp4 = new Employee("1003","Safi Walid","Adminstration","Mid-Senior","./CS
 const emp5 = new Employee("1004","Omar Zaid","Development","Senior","./CSS/images/Omar.jpg");
 const emp6 = new Employee("1005","Rana Saleh","Development","Junior","./CSS/images/Rana.jpg");
 const emp7 = new Employee("1006","Hadi Ahamad","Finance","Mid-Senior","./CSS/images/Hadi.jpg");
-settingItem();
 
-console.log( Employee.allEmployee);
+
 
 
 function settingItem(){
     let data = JSON.stringify(Employee.allEmployee);// convert the data to JSON format 
     localStorage.setItem('employees',data)
+
+  console.log(JSON.parse(data));
+
   
-  
+
   }
   
   
-  //2. get date : take the data from local storage 
+  //2. get data : take the data from local storage 
   
   function gettingItem(){
     let stringObj = localStorage.getItem('employees');
-     console.log(stringObj);
     let parsObj = JSON.parse(stringObj);
-    console.log(parsObj);
     if (parsObj !== null){
       Employee.allEmployee = parsObj
     }
-  
+    render();
+
   
   }
 
- 
 
-  gettingItem();
-  render();
-
- console.log(Employee.allEmployee);
+gettingItem();
